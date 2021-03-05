@@ -69,20 +69,33 @@ jobs:
         name: wheelhouse
         path: wheelhouse/xeus_robot*.whl
 
-  test-linux:
-    runs-on: ubuntu-latest
-    needs: [linux]
+  test-wheel:
+    runs-on: ${{ matrix.os }}-latest
+    needs: [linux, osx]
 
     strategy:
       matrix:
+        os: [ubuntu, macos]
         PYTHON_VERSION: [3.7, 3.8, 3.9]
         include:
           - PYTHON_VERSION: 3.7
+            os: ubuntu
             whl: 'xeus_robot-*-cp37*linux*.whl'
           - PYTHON_VERSION: 3.8
+            os: ubuntu
             whl: 'xeus_robot-*-cp38*linux*.whl'
           - PYTHON_VERSION: 3.9
+            os: ubuntu
             whl: 'xeus_robot-*-cp39*linux*.whl'
+          - PYTHON_VERSION: 3.7
+            os: macos
+            whl: 'xeus_robot-*-cp37*macos*.whl'
+          - PYTHON_VERSION: 3.8
+            os: macos
+            whl: 'xeus_robot-*-cp38*macos*.whl'
+          - PYTHON_VERSION: 3.9
+            os: macos
+            whl: 'xeus_robot-*-cp39*macos*.whl'
 
     steps:
     - name: Checkout
