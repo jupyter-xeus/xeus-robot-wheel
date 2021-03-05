@@ -28,10 +28,8 @@ set(JSON_GIT_TAG          v3.7.3)
 set(XEUS_GIT_TAG          1.0.1)
 set(PYBIND11_GIT_TAG      v2.6.0)
 set(PYBIND11_JSON_GIT_TAG 0.2.9)
-# set(XEUS_PYTHON_GIT_TAG   0.11.2)
-set(XEUS_PYTHON_GIT_TAG   6fcaffb9a08f42c21c23415dc199b4c7155d7e0a)
-# set(XEUS_ROBOT_GIT_TAG    0.3.0)
-set(XEUS_ROBOT_GIT_TAG    9aaf0c46a0fa310f3a4983e8268c3f7446bdcb9a)
+set(XEUS_PYTHON_GIT_TAG   0.11.3)
+set(XEUS_ROBOT_GIT_TAG    0.3.1)
 
 # pre-build non-cmake dependencies
 # ================================
@@ -273,7 +271,7 @@ set(XROB_BUILD_XROBOT_EXTENSION ON CACHE BOOL "Build xrobot extension module" FO
 
 FetchContent_Declare(
   xeus-robot
-  GIT_REPOSITORY https://github.com/martinRenou/xeus-robot
+  GIT_REPOSITORY https://github.com/jupyter-xeus/xeus-robot
   GIT_TAG ${XEUS_ROBOT_GIT_TAG}
 )
 
