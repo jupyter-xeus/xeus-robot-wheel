@@ -24,6 +24,7 @@ python_path = sys.executable
 def accept_file(name):
     return not (
         name.endswith('.a') or      # static libraries
+        name.endswith('.lib') or    # lib files
         name.endswith('.hpp') or    # headers
         name.endswith('.h') or      # headers
         name.endswith('.cmake') or  # cmake files
