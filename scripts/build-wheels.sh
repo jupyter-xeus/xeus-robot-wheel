@@ -4,7 +4,7 @@ set -e -x
 # Compile wheels
 echo Compiling wheels:
 for PYBIN in /opt/python/cp3*/bin; do
-    if [ "${PYBIN}" != "/opt/python/cp34-cp34m/bin" ] && [ "${PYBIN}" != "/opt/python/cp35-cp35m/bin" ] && [ "${PYBIN}" != "/opt/python/cp36-cp36m/bin" ] && [ "${PYBIN}" != "/opt/python/cp10-cp10m/bin" ]; then
+    if [ "${PYBIN}" != "/opt/python/cp34-cp34m/bin" ] && [ "${PYBIN}" != "/opt/python/cp35-cp35m/bin" ] && [ "${PYBIN}" != "/opt/python/cp36-cp36m/bin" ] && [ "${PYBIN}" != "/opt/python/cp310-cp310m/bin" ]; then
         "${PYBIN}/pip" install -r /io/dev-requirements.txt
         "${PYBIN}/pip" wheel /io/ -w wheels/
         # "${PYBIN}/pip" wheel /io/ --verbose -w /io/wheelhouse/
@@ -32,7 +32,7 @@ for PYBIN in /opt/python/cp3*/bin; do
     export LD_LIBRARY_PATH_BU=$LD_LIBRARY_PATH
     export PATH_BU=$PATH
     export PATH=$PATH:${PYBIN}
-    if [ "${PYBIN}" == "/opt/python/cp34-cp34m/bin" ] || [ "${PYBIN}" == "/opt/python/cp35-cp35m/bin" ] || [ "${PYBIN}" == "/opt/python/cp36-cp36m/bin" ] && [ "${PYBIN}" != "/opt/python/cp10-cp10m/bin" ]; then
+    if [ "${PYBIN}" == "/opt/python/cp34-cp34m/bin" ] || [ "${PYBIN}" == "/opt/python/cp35-cp35m/bin" ] || [ "${PYBIN}" == "/opt/python/cp36-cp36m/bin" ] && [ "${PYBIN}" != "/opt/python/cp310-cp310m/bin" ]; then
         continue
     elif [ "${PYBIN}" == "/opt/python/cp37-cp37m/bin" ]; then
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/_internal/cpython-3.7.6/lib
