@@ -21,6 +21,7 @@ except ImportError:
 
 python_path = sys.executable
 
+
 def accept_file(name):
     return not (
         name.endswith('.a') or      # static libraries
@@ -32,6 +33,7 @@ def accept_file(name):
         name.endswith('.txt')       # text files
     )
 
+
 def cmake_process_manifest_hook(cmake_manifest):
     print(cmake_manifest)
     print('\n\n')
@@ -39,9 +41,10 @@ def cmake_process_manifest_hook(cmake_manifest):
     print(cmake_manifest)
     return cmake_manifest
 
+
 setup(
     name="xeus-robot",
-    version="0.3.5",
+    version="0.3.6",
     description='A wheel for xeus-robot',
     author='Sylvain Corlay, Johan Mabille, Martin Renou',
     license='',
@@ -49,7 +52,7 @@ setup(
     py_modules=['xrobot_launcher'],
     install_requires=[
         'pygments>=2.3.1,<3',
-        'robotframework-interpreter>=0.6.3,<0.7',
+        'robotframework-interpreter>=0.7.0,<0.8',
         'robotframework-lsp',
         'jupyterlab_robotmode',
         'ipython>=7.20,<8'
