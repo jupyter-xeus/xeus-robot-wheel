@@ -74,6 +74,7 @@ jobs:
     needs: [linux, osx]
 
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu, macos]
         PYTHON_VERSION: [3.7, 3.8, 3.9]
