@@ -52,6 +52,7 @@ setup(
     py_modules=['xrobot_launcher'],
     install_requires=[
         'pygments>=2.3.1,<3',
+        'Pillow==8.3.1',
         'robotframework-interpreter>=0.7.2,<0.8',
         'robotframework-lsp',
         'jupyterlab_robotmode',
