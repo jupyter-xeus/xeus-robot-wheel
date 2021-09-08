@@ -29,7 +29,7 @@ set(XEUS_GIT_TAG          1.0.3)
 set(PYBIND11_GIT_TAG      v2.6.0)
 set(PYBIND11_JSON_GIT_TAG 0.2.9)
 set(XEUS_PYTHON_GIT_TAG   0.12.5)
-set(XEUS_ROBOT_GIT_TAG    0.3.7)
+set(XEUS_ROBOT_GIT_TAG    0.3.8)
 
 # pre-build non-cmake dependencies
 # ================================
