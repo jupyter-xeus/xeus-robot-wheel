@@ -54,6 +54,7 @@ setup(
         'pygments>=2.3.1,<3',
         'Pillow==8.3.1',
         'robotframework-interpreter>=0.7.3,<0.8',
+        'debugpy>=1.1.0',
         'robotframework-lsp',
         'jupyterlab_robotmode',
         'ipython>=7.20,<8'
