@@ -51,13 +51,12 @@ setup(
     packages=['xrobot'],
     py_modules=['xrobot_launcher'],
     install_requires=[
-        'pygments>=2.3.1,<3',
         'Pillow==8.3.1',
         'robotframework-interpreter>=0.7.3,<0.8',
-        'debugpy>=1.1.0',
         'robotframework-lsp',
         'jupyterlab_robotmode',
-        'ipython>=7.20,<8'
+        'xeus-python==0.13.0',
+        'xeus-python-shell'  # TODO Remove this when the missing dependency is fixed in xeus-python wheel
     ],
     setup_requires=setup_requires,
     cmake_args=['-DCMAKE_INSTALL_LIBDIR=lib', '-DPYTHON_EXECUTABLE:FILEPATH=' + python_path],
