@@ -69,62 +69,62 @@ jobs:
         name: wheelhouse
         path: wheelhouse/xeus_robot*.whl
 
-  test-wheel:
-    runs-on: ${{ matrix.os }}-latest
-    needs: [linux, osx]
+  # test-wheel:
+  #   runs-on: ${{ matrix.os }}-latest
+  #   needs: [linux, osx]
 
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu, macos]
-        PYTHON_VERSION: [3.7, 3.8, 3.9]
-        include:
-          - PYTHON_VERSION: 3.7
-            os: ubuntu
-            whl: 'xeus_robot-*-cp37*linux*.whl'
-          - PYTHON_VERSION: 3.8
-            os: ubuntu
-            whl: 'xeus_robot-*-cp38*linux*.whl'
-          - PYTHON_VERSION: 3.9
-            os: ubuntu
-            whl: 'xeus_robot-*-cp39*linux*.whl'
-          - PYTHON_VERSION: 3.7
-            os: macos
-            whl: 'xeus_robot-*-cp37*macos*.whl'
-          - PYTHON_VERSION: 3.8
-            os: macos
-            whl: 'xeus_robot-*-cp38*macos*.whl'
-          - PYTHON_VERSION: 3.9
-            os: macos
-            whl: 'xeus_robot-*-cp39*macos*.whl'
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       os: [ubuntu, macos]
+  #       PYTHON_VERSION: [3.7, 3.8, 3.9]
+  #       include:
+  #         - PYTHON_VERSION: 3.7
+  #           os: ubuntu
+  #           whl: 'xeus_robot-*-cp37*linux*.whl'
+  #         - PYTHON_VERSION: 3.8
+  #           os: ubuntu
+  #           whl: 'xeus_robot-*-cp38*linux*.whl'
+  #         - PYTHON_VERSION: 3.9
+  #           os: ubuntu
+  #           whl: 'xeus_robot-*-cp39*linux*.whl'
+  #         - PYTHON_VERSION: 3.7
+  #           os: macos
+  #           whl: 'xeus_robot-*-cp37*macos*.whl'
+  #         - PYTHON_VERSION: 3.8
+  #           os: macos
+  #           whl: 'xeus_robot-*-cp38*macos*.whl'
+  #         - PYTHON_VERSION: 3.9
+  #           os: macos
+  #           whl: 'xeus_robot-*-cp39*macos*.whl'
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+    # steps:
+    # - name: Checkout
+    #   uses: actions/checkout@v2
 
-    - uses: actions/download-artifact@v2
-      with:
-        name: wheelhouse
-        path: ./wheelhouse
+    # - uses: actions/download-artifact@v2
+    #   with:
+    #     name: wheelhouse
+    #     path: ./wheelhouse
 
-    - name: Setup conda
-      uses: conda-incubator/setup-miniconda@v2
-      with:
-        python-version: ${{ matrix.PYTHON_VERSION }}
-        mamba-version: "*"
-        auto-activate-base: false
-        channels: conda-forge
+    # - name: Setup conda
+    #   uses: conda-incubator/setup-miniconda@v2
+    #   with:
+    #     python-version: ${{ matrix.PYTHON_VERSION }}
+    #     mamba-version: "*"
+    #     auto-activate-base: false
+    #     channels: conda-forge
 
-    - name: Install deps
-      run: mamba install -c conda-forge pip pytest nbval
+    # - name: Install deps
+    #   run: mamba install -c conda-forge pip pytest nbval
 
-    - name: Install wheel
-      run: |
-        cd wheelhouse
-        pip install -vv ${{ matrix.whl }}
+    # - name: Install wheel
+    #   run: |
+    #     cd wheelhouse
+    #     pip install -vv ${{ matrix.whl }}
 
-    - name: Try kernel
-      run: python -m xrobot_launcher
+    # - name: Try kernel
+    #   run: python -m xrobot_launcher
 
-    - name: Run test
-      run: pytest test -vv
+    # - name: Run test
+    #   run: pytest test -vv
