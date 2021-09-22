@@ -123,5 +123,8 @@ jobs:
         cd wheelhouse
         pip install -vv ${{ matrix.whl }}
 
+    - name: Try kernel
+      run: python -m xrobot_launcher
+
     - name: Run test
       run: pytest test -vv
