@@ -44,7 +44,7 @@ def cmake_process_manifest_hook(cmake_manifest):
 
 setup(
     name="xeus-robot",
-    version="0.4.1",
+    version="0.4.2",
     description='A wheel for xeus-robot',
     author='Sylvain Corlay, Johan Mabille, Martin Renou',
     license='',
@@ -52,11 +52,10 @@ setup(
     py_modules=['xrobot_launcher'],
     install_requires=[
         'Pillow==8.3.1',
-        'robotframework-interpreter>=0.7.3,<0.8',
+        'robotframework-interpreter>=0.7.4,<0.8',
         'robotframework-lsp',
         'jupyterlab_robotmode',
-        'xeus-python==0.13.0',
-        'xeus-python-shell'  # TODO Remove this when the missing dependency is fixed in xeus-python wheel
+        'xeus-python==0.13.1'
     ],
     setup_requires=setup_requires,
     cmake_args=['-DCMAKE_INSTALL_LIBDIR=lib', '-DPYTHON_EXECUTABLE:FILEPATH=' + python_path],
