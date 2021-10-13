@@ -44,7 +44,7 @@ def cmake_process_manifest_hook(cmake_manifest):
 
 setup(
     name="xeus-robot",
-    version="0.4.2",
+    version="0.4.3",
     description='A wheel for xeus-robot',
     author='Sylvain Corlay, Johan Mabille, Martin Renou',
     license='',
@@ -55,7 +55,7 @@ setup(
         'robotframework-interpreter>=0.7.5,<0.8',
         'robotframework-lsp',
         'jupyterlab_robotmode',
-        'xeus-python==0.13.1'
+        'xeus-python==0.13.2'
     ],
     setup_requires=setup_requires,
     cmake_args=['-DCMAKE_INSTALL_LIBDIR=lib', '-DPYTHON_EXECUTABLE:FILEPATH=' + python_path],
