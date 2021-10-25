@@ -44,7 +44,7 @@ def cmake_process_manifest_hook(cmake_manifest):
 
 setup(
     name="xeus-robot",
-    version="0.4.3",
+    version="0.4.4",
     description='A wheel for xeus-robot',
     author='Sylvain Corlay, Johan Mabille, Martin Renou',
     license='',
