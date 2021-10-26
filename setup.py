@@ -55,7 +55,7 @@ setup(
         'robotframework-interpreter>=0.7.5,<0.8',
         'robotframework-lsp',
         'jupyterlab_robotmode',
-        'xeus-python==0.13.2'
+        'xeus-python==0.13.5'
     ],
     setup_requires=setup_requires,
     cmake_args=['-DCMAKE_INSTALL_LIBDIR=lib', '-DPYTHON_EXECUTABLE:FILEPATH=' + python_path],
